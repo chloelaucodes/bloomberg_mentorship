@@ -2,24 +2,18 @@ import java.util.HashMap;
 import java.util.LinkedList;
 
 public class User {
-  /**
-   * hashMap that stores all user data
-   */
+  /** hashMap that stores all user data */
   private final HashMap<Integer, LinkedList<String>> hashMap;
-  
-  /**
-   * the easiest way to implement a userID, could be improved by using a hashed function
-   */
+
+  /** the easiest way to implement a userID, could be improved by using a hashed function */
   private int counter;
-  
-  /**
-   * User Class Constructor
-   */
+
+  /** User Class Constructor */
   public User() {
     this.hashMap = new HashMap<Integer, LinkedList<String>>();
     this.counter = 0;
   }
-  
+
   /**
    * Checks if the database has a specific user with the userID
    *
@@ -86,17 +80,17 @@ public class User {
 
     this.hashMap.put(counter++, value);
   }
-  
+
   /**
    * Prints User Profile to terminal
    *
    * @param userID unique UserID used when adding user to hashMap
    */
   public void displayUserProfile(Integer userID) {
-    
+
     System.out.println(makeString(userID));
   }
-  
+
   /**
    * Make String for displayUserProfile(userID) to print
    *
@@ -106,13 +100,13 @@ public class User {
   public String makeString(Integer userID) {
     LinkedList<String> value = this.hashMap.get(userID);
     return "UserID: "
-            + userID
-            + "\nName: "
-            + value.get(0)
-            + "\nEmail Address: "
-            + value.get(1)
-            + "\nPhone Number: "
-            + value.get(2);
+        + userID
+        + "\nName: "
+        + value.get(0)
+        + "\nEmail Address: "
+        + value.get(1)
+        + "\nPhone Number: "
+        + value.get(2);
   }
 
   /**
