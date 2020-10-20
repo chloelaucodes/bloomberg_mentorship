@@ -29,7 +29,7 @@ public class User {
   public boolean hasUser(Integer userID) {
     return this.hashMap.containsKey(userID);
   }
-  
+
   /**
    * Get User Details in a LinkedList<String> Pre: hasUser(userID)
    *
@@ -39,7 +39,7 @@ public class User {
   public LinkedList<String> getUserDetails(Integer userID) {
     return this.hashMap.get(userID);
   }
-  
+
   /**
    * Get User Name in a String Pre: hasUser(userID)
    *
@@ -49,7 +49,7 @@ public class User {
   public String getUserName(Integer userID) {
     return this.hashMap.get(userID).get(0);
   }
-  
+
   /**
    * Get User Email Address in a String Pre: hasUser(userID)
    *
@@ -59,7 +59,7 @@ public class User {
   public String getUserEmailAddress(Integer userID) {
     return this.hashMap.get(userID).get(1);
   }
-  
+
   /**
    * Get User Phone Number in a String Pre: hasUser(userID)
    *
@@ -69,7 +69,7 @@ public class User {
   public String getUserPhoneNumber(Integer userID) {
     return this.hashMap.get(userID).get(2);
   }
-  
+
   /**
    * Adds new user profile into the hashMap Pre: !hasUser(userID)
    *
@@ -83,7 +83,7 @@ public class User {
     value.add(name);
     value.add(emailAddress);
     value.add(phoneNumber);
-  
+
     this.hashMap.put(counter++, value);
   }
   
@@ -97,6 +97,12 @@ public class User {
     System.out.println(makeString(userID));
   }
   
+  /**
+   * Make String for displayUserProfile(userID) to print
+   *
+   * @param userID unique UserID used when adding user to hashMap
+   * @return (String) user details in a string
+   */
   public String makeString(Integer userID) {
     LinkedList<String> value = this.hashMap.get(userID);
     return "UserID: "
@@ -108,7 +114,7 @@ public class User {
             + "\nPhone Number: "
             + value.get(2);
   }
-  
+
   /**
    * Changes the user's name in the hashMap
    *
@@ -121,7 +127,7 @@ public class User {
 
     this.hashMap.replace(userID, newValue);
   }
-  
+
   /**
    * Changes the user's name in the hashMap
    *
@@ -134,7 +140,7 @@ public class User {
 
     this.hashMap.replace(userID, newValue);
   }
-  
+
   /**
    * Changes the user's name in the hashMap
    *
