@@ -20,6 +20,12 @@ public class User {
     this.counter = 0;
   }
   
+  /**
+   * Checks if the database has a specific user with the userID
+   *
+   * @param userID unique UserID used when adding user to hashMap
+   * @return (boolean) whether user exists
+   */
   public boolean hasUser(Integer userID) {
     return this.hashMap.containsKey(userID);
   }
