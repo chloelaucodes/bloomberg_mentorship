@@ -4,7 +4,7 @@
 
 This is a repository for the Bloomberg Mentorship Program Group Project for [Sanjana Ganguly](https://github.com/SanjanaGanguly1999), [Klaudia Kreft](https://github.com/kuluders), [Chloe Lau](https://github.com/chloelaucodes), and [Zeynap Soyan](https://github.com/zeynepsoyan).
 
-It is an subsidiary project under the Bloomberg Mentorship Program as part of an follow-up to the 2020 BWIT Summer/Autumn Insight week.
+It is a subsidiary project under the Bloomberg Mentorship Program as part of a follow-up to the 2020 BWIT Summer/Autumn Insight week.
 
 Progress and Documentation will be available in [Notion](https://www.notion.so/chloelau/CALENDAR-fa7ce6673970447da29ae572c7886a59).
 
