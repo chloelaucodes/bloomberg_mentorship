@@ -6,7 +6,7 @@ This is a repository for the Bloomberg Mentorship Program Group Project for [San
 
 It is a subsidiary project under the Bloomberg Mentorship Program as part of a follow-up to the 2020 BWIT Summer/Autumn Insight week.
 
-Progress and Documentation will be available in [Notion](https://www.notion.so/chloelau/Bloomberg-Mentorship-Program-Project-04117dd0268c4185b63a6a55a0f01818).
+Progress and Documentation will be available in [Notion](https://www.notion.so/Bloomberg-Mentorship-Program-Project-04117dd0268c4185b63a6a55a0f01818).
 
 ## Structure
 
