@@ -3,7 +3,7 @@ import java.time.format.*;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class NewsPost {
+public class NewsPost implements Comparable<NewsPost>{
 	
 	private String content, title, timeOfPosting;
 	private User author;
@@ -42,6 +42,11 @@ public class NewsPost {
 		for (String tag:tags) {
 			s += "#" + tag + "; ";
 		}
-		return String.format("|%100d|", s);
+		return s; //String.format("|%100d|", s);
+	}
+	
+	@Override
+	public int compareTo(NewsPost otherPost) {
+		return Integer.compare(getReads(), otherPost.getReads());
 	}
 }

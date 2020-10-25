@@ -24,32 +24,46 @@ public class News {
 	public String displayTopTenNews() {
 		Set<Timestamp> keys = newsFeed.keySet();
 		String topFeed = "";
-		int count = 0;
-		Timestamp start = null;
 		ArrayList <Timestamp> top = new ArrayList<Timestamp>();
-		for (Timestamp key:keys) {
-			count++;
-			if (count <= 10)
-				top.add(count-1, key);
-			else {
-				for(int i = 0; i < 5; i++) {
-					if (key.after(top.get(i)) && key.before(top.get(i+5)))
-						start = key;
-					else {
-						if (!key.after(top.get(i)))
-							top.add(i, start);
-						else
-							top.add(i+5, start);
-						top.remove(top.get(top.size()-1));
-					}//else
-				}//for
-			}//else
-		}//for
-		for (Timestamp t:top) {
-			NewsPost post = newsFeed.get(t);
+		top.addAll(keys);
+		top.sort(Collections.reverseOrder());
+		for(int i = 0; i < 10; i++){
+			NewsPost post = newsFeed.get(top.get(i));
 			topFeed += post.toString() + "\n\n";
 		}
 		return topFeed;
+	}//displayTopTenNews
+	
+	public String displayStoriesForAuthor(User author) {
+		HashMap<Timestamp, NewsPost> AuthorPosts = author.getAuthorPosts();
+		Set<Timestamp> keys = AuthorPosts.keySet();
+		String userFeed = "";
+		int count = 0;
+		Timestamp start = null;
+		ArrayList <Timestamp> auth = new ArrayList<Timestamp>();
+		auth.addAll(keys);
+		auth.sort(Collections.reverseOrder());
+		for(int i = 0; i < 10; i++){
+			NewsPost post = newsFeed.get(auth.get(i));
+			userFeed += post.toString() + "\n\n";
+		}
+		return userFeed;
+	}//displayStoriesForAuthor
+	
+	public String displayStoriesWithTags(Set<String> listOfTags) {
+		Set<Timestamp> keys = newsFeed.keySet();
+		String tagFeed = "";
+		ArrayList <NewsPost> ts = new ArrayList<NewsPost>();
+		for(Timestamp key:keys){
+			NewsPost check = newsFeed.get(key);
+			Set<String> superSet = check.getTags();
+			if (superSet.containsAll(listOfTags))
+				ts.add(check);
+		}
+		for(NewsPost t:ts) {
+			tagFeed += t.toString() + "\n\n";
+		}//for
+		return tagFeed;
 	}//displayTopTenNews
 	
 }
