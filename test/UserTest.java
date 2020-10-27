@@ -17,7 +17,7 @@ public class UserTest {
 
     assertTrue(userData.hasUser(0));
   }
-  
+
   @Test
   public void addUserTest() {
     UserData userData = new UserData();
@@ -28,7 +28,7 @@ public class UserTest {
     assertEquals(user.getPhone(), DEFAULT_PHONE);
     assertEquals(user.getUserId(), userId);
   }
-  
+
   @Test
   public void changeNameTest() {
     UserData userData = new UserData();
@@ -75,7 +75,7 @@ public class UserTest {
             + DEFAULT_PHONE
             + "\nJoined at: "
             + joinDate;
-    
+
     assertEquals(display, userData.makeString(userId));
   }
 }

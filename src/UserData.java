@@ -23,7 +23,7 @@ public class UserData {
   public boolean hasUser(Integer userID) {
     return this.hashMap.containsKey(userID);
   }
-  
+
   /**
    * Get User in a String Pre: hasUser(userID)
    *
@@ -63,7 +63,7 @@ public class UserData {
   public String getUserPhoneNumber(Integer userID) {
     return this.hashMap.get(userID).getPhone();
   }
-  
+
   /**
    * Get User Join Date in a String Pre: hasUser(userID)
    *
